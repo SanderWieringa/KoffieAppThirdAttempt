@@ -17,8 +17,13 @@ public class KoffieApparaatItem {
         _cost = cost;
     }
 
-    public KoffieApparaatItem() {
+    protected KoffieApparaatItem() {
 
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Rest.KoffieApparaatItem[id=%d, name='%s', cost='%s']", _id, _name, _cost);
     }
 
     public int getId(){
