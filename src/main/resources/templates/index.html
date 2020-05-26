@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+
+
+<div id="app">
+    <h1>My First Heading</h1>
+    <p>My first paragraph!</p>
+    <div v-data-table>
+        <div v-for="koffieItem in koffieItems">{{koffieItem.name}}</div>
+    </div>
+    <ul>
+        <li v-for="koffieItem in koffieItems">{{koffieItem.name}}</li>
+    </ul>
+
+    <div class="details" v-show="showDetails"></div>
+</div>
+
+<script>
+    const apiURL = "http://localhost:3337/koffieItems";
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                koffieItems: []
+            }
+        },
+        created() {
+            fetch(apiURL)
+            .then(response => {
+                return response.json();
+            })
+            .then(koffieItems => {
+                this.koffieItems = koffieItems;
+            })
+        }
+    });
+</script>
 
 </body>
 </html>
+
