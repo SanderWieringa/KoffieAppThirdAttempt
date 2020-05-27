@@ -5,19 +5,39 @@
 </head>
 <body>
 
-
-
 <div id="app">
     <h1>My First Heading</h1>
     <p>My first paragraph!</p>
-    <div v-data-table>
+
+    <div class="container">
+        <table class='table col-4-sm align-self-center'>
+            <thead>
+                <tr>
+                    <th scope='col'>id</th>
+                    <th scope='col'>name</th>
+                    <th scope='col'>cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="koffieItem in koffieItems" :key="koffieItem.id">
+                    <td>{{ koffieItem.id }}</td>
+                    <td>{{ koffieItem.name }}</td>
+                    <td>{{ koffieItem._cost }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <div v-for="koffieItem in koffieItems">{{koffieItem.id}}</div>
         <div v-for="koffieItem in koffieItems">{{koffieItem.name}}</div>
+        <div v-for="koffieItem in koffieItems">{{koffieItem._cost}}</div>
     </div>
     <ul>
+        <li v-for="koffieItem in koffieItems">{{koffieItem.id}}</li>
         <li v-for="koffieItem in koffieItems">{{koffieItem.name}}</li>
+        <li v-for="koffieItem in koffieItems">{{koffieItem._cost}}</li>
     </ul>
-
-    <div class="details" v-show="showDetails"></div>
 </div>
 
 <script>
@@ -37,9 +57,13 @@
             .then(koffieItems => {
                 this.koffieItems = koffieItems;
             })
+            .then(response => console.log(response))
         }
     });
 </script>
+
+<style scoped>
+</style>
 
 </body>
 </html>
