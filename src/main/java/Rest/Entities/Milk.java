@@ -4,15 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Sugar {
+public class Milk {
     @Id
     private int _id;
 
-    public Sugar(){
+    public Milk(){
 
     }
 
-    public Sugar(int id){
+    public Milk(int id){
         _id = id;
     }
+
 }

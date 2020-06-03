@@ -2,6 +2,8 @@ package Rest.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class KoffieApparaatItem {
@@ -10,11 +12,17 @@ public class KoffieApparaatItem {
     private int _id;
     private String _name;
     private double _cost;
+    @OneToMany
+    private List<Sugar> _sugar;
+    @OneToMany
+    private List<Milk> _milk;
 
-    public KoffieApparaatItem(int id, String name, double cost) {
+    public KoffieApparaatItem(int id, String name, double cost, List<Sugar> sugar, List<Milk> milk) {
         _id = id;
         _name = name;
         _cost = cost;
+        _sugar = sugar;
+        _milk = milk;
     }
 
     protected KoffieApparaatItem() {
