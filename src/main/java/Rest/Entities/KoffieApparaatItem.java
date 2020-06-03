@@ -54,4 +54,10 @@ public class KoffieApparaatItem {
     public double get_cost(){
         return _cost;
     }
+
+    public List<Sugar> get_sugar() { return _sugar; }
+    public void set_sugar(List<Sugar> sugar) { _sugar = sugar; }
+
+    public List<Milk> get_milk() { return _milk; }
+    public void set_milk(List<Milk> milk) { _milk = milk; }
 }

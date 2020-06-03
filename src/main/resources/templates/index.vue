@@ -34,7 +34,7 @@
                 Add a new product
             </div>
                 <div data-v-bf5d2bb8="" class="card-body">
-                    <form data-v-bf5d2bb8=""  class="form-inline">
+                    <form data-v-bf5d2bb8="" v-on:submit.prevent="createKoffieItem" class="form-inline">
                         <div data-v-bf5d2bb8="" class="form-group">
                             <label data-v-bf5d2bb8="">ID</label>
                             <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
@@ -163,18 +163,16 @@
                 })
                 .then(response => console.log(response))
         },
-        createKoffieItem(newKoffieItem) {
-            var value = newKoffieItem && newKoffieItem.trim()
-            if(!value) {
-                return
+        methods: {
+            createKoffieItem(newKoffieItem) {
+                if(newKoffieItem.name != "") {
+                    let TestForURL = {Id:0, Name:newKoffieItem.name, Cost:1.0};
+                    axios.post(apiURL, TestForURL, {headers:{'Content-Type': 'application/json'}});
+                }
             }
-
-            koffieItems.push({
-                id: value.id,
-                name: value.name,
-                cost: value.cost
-            });
         }
+
+
     });
 </script>
 
