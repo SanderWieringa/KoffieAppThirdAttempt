@@ -1,112 +1,112 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
+<template>
 
-<div id="app">
-    <div data-v-a274dc00="" class="header">
-        <nav data-v-a274dc00="" class="navbar navbar-light bg-light navbar-expand-lg">
-            <div data-v-a274dc00="" class="container">
-                <a data-v-a274dc00="" href="#" class="navbar-brand router-link-exact-active router-link-active">Koffie Apparaat</a>
-                <button data-v-a274dc00="" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
-                    <span data-v-a274dc00="" class="navbar-toggler-icon"></span>
-                </button>
-                <div data-v-a274dc00="" id="navbarNav" class="collapse navbar-collapse">
-                    <ul data-v-a274dc00="" class="navbar-nav">
-                        <li data-v-a274dc00="" class="nav-item active">
-                            <a data-v-a274dc00="" href="#" class="nav-link">
-                                Home
-                                <span data-v-a274dc00="" class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
+    <div>
+        <header class="header">
+        <h1>Expenses</h1>
+        </header>
+        <div data-v-a274dc00="" class="header">
+            <nav data-v-a274dc00="" class="navbar navbar-light bg-light navbar-expand-lg">
+                <div data-v-a274dc00="" class="container">
+                    <a data-v-a274dc00="" href="#" class="navbar-brand router-link-exact-active router-link-active">Koffie Apparaat</a>
+                    <button data-v-a274dc00="" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+                        <span data-v-a274dc00="" class="navbar-toggler-icon"></span>
+                    </button>
+                    <div data-v-a274dc00="" id="navbarNav" class="collapse navbar-collapse">
+                        <ul data-v-a274dc00="" class="navbar-nav">
+                            <li data-v-a274dc00="" class="nav-item active">
+                                <a data-v-a274dc00="" href="#" class="nav-link">
+                                    Home
+                                    <span data-v-a274dc00="" class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
 
-    <div class="container">
-        <div data-v-bf5d2bb8="" class="products">
-            <h3 data-v-bf5d2bb8="">Products</h3>
-            <div data-v-bf5d2bb8="" class="card"><div data-v-bf5d2bb8="" class="card-header">
-                Add a new product
-            </div>
-                <div data-v-bf5d2bb8="" class="card-body">
-                    <form data-v-bf5d2bb8=""  class="form-inline">
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">ID</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">Name</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">Price</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="ml-auto text-right">
-                            <button data-v-bf5d2bb8="" type="submit" class="btn btn-primary my-2">Add</button>
-                        </div>
-                    </form>
+        <div class="container">
+            <div data-v-bf5d2bb8="" class="products">
+                <h3 data-v-bf5d2bb8="">Products</h3>
+                <div data-v-bf5d2bb8="" class="card"><div data-v-bf5d2bb8="" class="card-header">
+                    Add a new product
                 </div>
-            </div>
-            <div data-v-bf5d2bb8="" class="card mt-5">
-                <div data-v-bf5d2bb8="" class="card-header">
-                    KoffieItem List
+                    <div data-v-bf5d2bb8="" class="card-body">
+                        <form data-v-bf5d2bb8=""  class="form-inline">
+                            <div data-v-bf5d2bb8="" class="form-group">
+                                <label data-v-bf5d2bb8="">ID</label>
+                                <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
+                            </div>
+                            <div data-v-bf5d2bb8="" class="form-group">
+                                <label data-v-bf5d2bb8="">Name</label>
+                                <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
+                            </div>
+                            <div data-v-bf5d2bb8="" class="form-group">
+                                <label data-v-bf5d2bb8="">Price</label>
+                                <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
+                            </div>
+                            <div data-v-bf5d2bb8="" class="ml-auto text-right">
+                                <button data-v-bf5d2bb8="" type="submit" class="btn btn-primary my-2">Add</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div data-v-bf5d2bb8="" class="card-body">
-                    <div data-v-bf5d2bb8="" class="table-responsive">
-                        <table data-v-bf5d2bb8="" class="table">
-                            <thead data-v-bf5d2bb8="">
-                            <tr data-v-bf5d2bb8="">
-                                <th data-v-bf5d2bb8="" scope="col">
-                                    KoffieItem ID
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    KoffieItem Name
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    KoffieItem Cost
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    Action
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody data-v-bf5d2bb8="">
-                            <tr v-for="koffieItem in koffieItems" :key="koffieItem.id">
-                                <td>{{ koffieItem.id }}</td>
-                                <td>{{ koffieItem.name }}</td>
-                                <td>{{ koffieItem._cost }}</td>
-                                <td data-v-bf5d2bb8="">
-                                    <a data-v-bf5d2bb8="" href="#" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-trash">
+                <div data-v-bf5d2bb8="" class="card mt-5">
+                    <div data-v-bf5d2bb8="" class="card-header">
+                        KoffieItem List
+                    </div>
+                    <div data-v-bf5d2bb8="" class="card-body">
+                        <div data-v-bf5d2bb8="" class="table-responsive">
+                            <table data-v-bf5d2bb8="" class="table">
+                                <thead data-v-bf5d2bb8="">
+                                <tr data-v-bf5d2bb8="">
+                                    <th data-v-bf5d2bb8="" scope="col">
+                                        KoffieItem ID
+                                    </th>
+                                    <th data-v-bf5d2bb8="">
+                                        KoffieItem Name
+                                    </th>
+                                    <th data-v-bf5d2bb8="">
+                                        KoffieItem Cost
+                                    </th>
+                                    <th data-v-bf5d2bb8="">
+                                        Action
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody data-v-bf5d2bb8="">
+                                <tr v-for="koffieItem in koffieItems" :key="koffieItem.id">
+                                    <td>{{ koffieItem.id }}</td>
+                                    <td>{{ koffieItem.name }}</td>
+                                    <td>{{ koffieItem._cost }}</td>
+                                    <td data-v-bf5d2bb8="">
+                                        <a data-v-bf5d2bb8="" href="#" class="icon">
+                                            <i data-v-bf5d2bb8="" class="fa fa-trash">
 
-                                        </i>
-                                    </a>
-                                    <a data-v-bf5d2bb8="" href="#" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-pencil">
+                                            </i>
+                                        </a>
+                                        <a data-v-bf5d2bb8="" href="#" class="icon">
+                                            <i data-v-bf5d2bb8="" class="fa fa-pencil">
 
-                                        </i>
-                                    </a>
-                                    <a data-v-bf5d2bb8="" href="#/product/PhLZuMwkEXFko2FL10VA" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-eye">
+                                            </i>
+                                        </a>
+                                        <a data-v-bf5d2bb8="" href="#/product/PhLZuMwkEXFko2FL10VA" class="icon">
+                                            <i data-v-bf5d2bb8="" class="fa fa-eye">
 
-                                        </i>
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                            </i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</template>
+    
 
 <!--
 <div class="container">
@@ -144,6 +144,7 @@
 </ul>
 -->
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     import axios from "axios";
     const apiURL = "http://localhost:3337/koffieItems";
@@ -9438,7 +9439,4 @@
     }
 
 </style>
-
-</body>
-</html>
 
