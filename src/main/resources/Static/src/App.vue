@@ -10,12 +10,11 @@
                 <div data-v-bf5d2bb8="" class="card-header">
                   Add a new product
                 </div>
-                <CardBody />
+                <CardBody v-on:add-koffieItem="createKoffieItem"/>
               </div>
-              <ProductTable />
+              <ProductTable v-bind:koffieItems="koffieItems"/>
           </div>
         </div>
-      <router-view/>
     </div>
   </body>
 </div>
@@ -26,7 +25,6 @@ import CardBody from './components/CardBody';
 import Header from './components/Header';
 import ProductTable from './components/ProductTable';
 import axios from 'axios';
-const apiURL = "http://localhost:3337/koffieItems";
 
 export default {
   name: 'App',
@@ -41,19 +39,23 @@ export default {
     }
   },
   mounted() {
-    fetch(apiURL)
-      .then(response => {
-        return response.json();
+    axios.get('http://localhost:3337/koffieItems')
+    .then(response => this.koffieItems = response.data)
+    .then(response => console.log(response))
+    .catch(error => {
+        if (!error.response) {
+            // network error
+            this.errorStatus = 'Error: Network Error';
+        } else {
+            this.errorStatus = error.response.data.message;
+        }
       })
-      .then(koffieItems => {
-        this.koffieItems = koffieItems;
-      })
-      .then(response => console.log(response))
       },
       methods: {
         createKoffieItem(newKoffieItem) {
-        const url = '/localhost/koffieItems';
-        axios.post(url, )
+        let TestForURL={Id:0,Name:newKoffieItem.name,Cost:0};
+        const url = 'http://localhost:3337/koffieItems';
+        axios.post(url, TestForURL, {headers:{'Content-Type': 'application/json'}})
       }
     }
       

@@ -23,7 +23,29 @@
     
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-    
+import { uuid } from 'vue-uuid';
+    export default {
+        name: "CardBody",
+        data() {
+            return {
+                name: ''
+            }
+        },
+        methods: {
+            createKoffieItem() {
+                const newKoffieItem = {
+                    id: uuid.v4(),
+                    name: this.name,
+                    cost: this.cost
+                }
+                this.$emit('createKoffieItem', newKoffieItem);
+
+                this.id='';
+                this.name='';
+                this.cost='';
+            }
+        }
+    }
 </script>
 
 <style scoped>
