@@ -10,9 +10,9 @@
                 <div data-v-bf5d2bb8="" class="card-header">
                   Add a new product
                 </div>
-                <CardBody v-on:add-koffieItem="createKoffieItem"/>
+                <CardBody v-on:create-KoffieItem="createKoffieItem" />
               </div>
-              <ProductTable v-bind:koffieItems="koffieItems"/>
+              <ProductTable v-bind:koffieItems="koffieItems" />
           </div>
         </div>
     </div>
@@ -42,6 +42,7 @@ export default {
     axios.get('http://localhost:3337/koffieItems')
     .then(response => this.koffieItems = response.data)
     .then(response => console.log(response))
+    .then(koffieItems => console.log(koffieItems))
     .catch(error => {
         if (!error.response) {
             // network error
@@ -53,7 +54,9 @@ export default {
       },
       methods: {
         createKoffieItem(newKoffieItem) {
-        let TestForURL={Id:0,Name:newKoffieItem.name,Cost:0};
+            response => console.log(response)
+            newKoffieItem => console.log(newKoffieItem)
+        let TestForURL={Id:newKoffieItem.id,Name:newKoffieItem.name,Cost:newKoffieItem.cost};
         const url = 'http://localhost:3337/koffieItems';
         axios.post(url, TestForURL, {headers:{'Content-Type': 'application/json'}})
       }

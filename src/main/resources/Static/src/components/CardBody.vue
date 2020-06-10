@@ -1,6 +1,6 @@
 <template>
 <div data-v-bf5d2bb8="" class="card-body">
-    <form data-v-bf5d2bb8=""  class="form-inline">
+    <form class="form-inline" @submit.prevent="createKoffieItem()">
         <div data-v-bf5d2bb8="" class="form-group">
             <label data-v-bf5d2bb8="">ID</label>
             <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
@@ -14,7 +14,8 @@
             <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
         </div>
         <div data-v-bf5d2bb8="" class="ml-auto text-right">
-            <button data-v-bf5d2bb8="" type="submit" class="btn btn-primary my-2">Add</button>
+            
+            <input type="submit" value="Add" class="btn btn-primary my-2">
         </div>
     </form>
 </div>
@@ -38,7 +39,7 @@ import { uuid } from 'vue-uuid';
                     name: this.name,
                     cost: this.cost
                 }
-                this.$emit('createKoffieItem', newKoffieItem);
+                this.$emit('create-KoffieItem', newKoffieItem);
 
                 this.id='';
                 this.name='';
