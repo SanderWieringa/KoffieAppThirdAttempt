@@ -1,206 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
-
-<div id="app">
-    <div data-v-a274dc00="" class="header">
-        <nav data-v-a274dc00="" class="navbar navbar-light bg-light navbar-expand-lg">
-            <div data-v-a274dc00="" class="container">
-                <a data-v-a274dc00="" href="#" class="navbar-brand router-link-exact-active router-link-active">Koffie Apparaat</a>
-                <button data-v-a274dc00="" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
-                    <span data-v-a274dc00="" class="navbar-toggler-icon"></span>
-                </button>
-                <div data-v-a274dc00="" id="navbarNav" class="collapse navbar-collapse">
-                    <ul data-v-a274dc00="" class="navbar-nav">
-                        <li data-v-a274dc00="" class="nav-item active">
-                            <a data-v-a274dc00="" href="#" class="nav-link">
-                                Home
-                                <span data-v-a274dc00="" class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="container">
-        <div data-v-bf5d2bb8="" class="products">
-            <h3 data-v-bf5d2bb8="">Products</h3>
-            <div data-v-bf5d2bb8="" class="card"><div data-v-bf5d2bb8="" class="card-header">
-                Add a new product
-            </div>
-                <div data-v-bf5d2bb8="" class="card-body">
-                    <form data-v-bf5d2bb8=""  class="form-inline">
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">ID</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">Name</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="form-group">
-                            <label data-v-bf5d2bb8="">Price</label>
-                            <input data-v-bf5d2bb8="" type="text" required="required" class="form-control ml-sm-2 mr-sm-4 my-2">
-                        </div>
-                        <div data-v-bf5d2bb8="" class="ml-auto text-right">
-                            <button data-v-bf5d2bb8="" type="submit" class="btn btn-primary my-2">Add</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div data-v-bf5d2bb8="" class="card mt-5">
+<template>
+<div>
+  <body>
+    <div id="app">
+        <Header />
+        <div class="container">
+          <div data-v-bf5d2bb8="" class="products">
+              <h3 data-v-bf5d2bb8="">Products</h3>
+              <div data-v-bf5d2bb8="" class="card">
                 <div data-v-bf5d2bb8="" class="card-header">
-                    KoffieItem List
+                  Add a new product
                 </div>
-                <div data-v-bf5d2bb8="" class="card-body">
-                    <div data-v-bf5d2bb8="" class="table-responsive">
-                        <table data-v-bf5d2bb8="" class="table">
-                            <thead data-v-bf5d2bb8="">
-                            <tr data-v-bf5d2bb8="">
-                                <th data-v-bf5d2bb8="" scope="col">
-                                    KoffieItem ID
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    KoffieItem Name
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    KoffieItem Cost
-                                </th>
-                                <th data-v-bf5d2bb8="">
-                                    Action
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody data-v-bf5d2bb8="">
-                            <tr v-for="koffieItem in koffieItems" :key="koffieItem.id">
-                                <td>{{ koffieItem.id }}</td>
-                                <td>{{ koffieItem.name }}</td>
-                                <td>{{ koffieItem._cost }}</td>
-                                <td data-v-bf5d2bb8="">
-                                    <a data-v-bf5d2bb8="" href="#" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-trash">
-
-                                        </i>
-                                    </a>
-                                    <a data-v-bf5d2bb8="" href="#" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-pencil">
-
-                                        </i>
-                                    </a>
-                                    <a data-v-bf5d2bb8="" href="#/product/PhLZuMwkEXFko2FL10VA" class="icon">
-                                        <i data-v-bf5d2bb8="" class="fa fa-eye">
-
-                                        </i>
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                <CardBody v-on:create-KoffieItem="createKoffieItem" />
+              </div>
+              <ProductTable v-bind:koffieItems="koffieItems" />
+          </div>
         </div>
     </div>
+  </body>
 </div>
-
-<!--
-<div class="container">
-
-
-    <table class='table col-4-sm align-self-center'>
-        <thead>
-            <tr>
-                <th scope='col'>id</th>
-                <th scope='col'>name</th>
-                <th scope='col'>cost</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="koffieItem in koffieItems" :key="koffieItem.id">
-                <td>{{ koffieItem.id }}</td>
-                <td>{{ koffieItem.name }}</td>
-                <td>{{ koffieItem._cost }}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
---->
-
-<!--
-<div>
-    <div v-for="koffieItem in koffieItems">{{koffieItem.id}}</div>
-    <div v-for="koffieItem in koffieItems">{{koffieItem.name}}</div>
-    <div v-for="koffieItem in koffieItems">{{koffieItem._cost}}</div>
-</div>
-<ul>
-    <li v-for="koffieItem in koffieItems">{{koffieItem.id}}</li>
-    <li v-for="koffieItem in koffieItems">{{koffieItem.name}}</li>
-    <li v-for="koffieItem in koffieItems">{{koffieItem._cost}}</li>
-</ul>
--->
+</template>
 
 <script>
-    import axios from "axios";
-    const apiURL = "http://localhost:3337/koffieItems";
-    new Vue({
-        el: '#app',
-        data(){
-            return{
-                koffieItems: []
-            }
-        },
-        mounted() {
-            fetch(apiURL)
-                .then(response => {
-                    return response.json();
-                })
-                .then(koffieItems => {
-                    this.koffieItems = koffieItems;
-                })
-                .then(response => console.log(response))
-        },
-        createKoffieItem(newKoffieItem) {
-            const url = '/localhost/koffieItems';
-            axios.post(url, )
+import CardBody from './components/CardBody';
+import Header from './components/Header';
+import ProductTable from './components/ProductTable';
+import axios from 'axios';
+
+export default {
+  name: 'App',
+  components: {
+    CardBody,
+    Header,
+    ProductTable
+  },
+  data() {
+    return {
+      koffieItems: null,
+    }
+  },
+  mounted() {
+    axios.get('http://localhost:3337/koffieItems')
+    .then(response => this.koffieItems = response.data)
+    .then(response => console.log(response))
+    .then(koffieItems => console.log(koffieItems))
+    .catch(error => {
+        if (!error.response) {
+            // network error
+            this.errorStatus = 'Error: Network Error';
+        } else {
+            this.errorStatus = error.response.data.message;
         }
-    });
+      })
+      },
+      methods: {
+        createKoffieItem(newKoffieItem) {
+        fetch(`http://localhost:3337/koffieItems/` + {
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                '_id': newKoffieItem.id,
+                '_name': newKoffieItem.name,
+                '_cost': newKoffieItem.cost
+            })
+        })
+        .then(
+            response => response.json(),
+            error => console.log(error)
+        )
+      }
+    }
+}
 </script>
 
-<style scoped>
-    :root {
-        --blue: #007bff;
-        --indigo: #6610f2;
-        --purple: #6f42c1;
-        --pink: #e83e8c;
-        --red: #dc3545;
-        --orange: #fd7e14;
-        --yellow: #ffc107;
-        --green: #28a745;
-        --teal: #20c997;
-        --cyan: #17a2b8;
-        --white: #fff;
-        --gray: #6c757d;
-        --gray-dark: #343a40;
-        --primary: #007bff;
-        --secondary: #6c757d;
-        --success: #28a745;
-        --info: #17a2b8;
-        --warning: #ffc107;
-        --danger: #dc3545;
-        --light: #f8f9fa;
-        --dark: #343a40;
-        --breakpoint-xs: 0;
-        --breakpoint-sm: 576px;
-        --breakpoint-md: 768px;
-        --breakpoint-lg: 992px;
-        --breakpoint-xl: 1200px;
-        --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+<style>
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
     }
 
     *,
@@ -9436,9 +9341,4 @@
             border: 1px solid #ddd!important
         }
     }
-
 </style>
-
-</body>
-</html>
-
