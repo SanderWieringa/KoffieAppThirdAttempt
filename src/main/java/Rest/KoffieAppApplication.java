@@ -56,6 +56,7 @@ public class KoffieAppApplication {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:3337");
                 registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8080");
+
             }
         };
     }

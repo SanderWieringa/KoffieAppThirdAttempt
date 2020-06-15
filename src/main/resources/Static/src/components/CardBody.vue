@@ -35,7 +35,6 @@ import { uuid } from 'vue-uuid';
         methods: {
             createKoffieItem() {
                 const newKoffieItem = {
-                    id: uuid.v4(),
                     name: this.name,
                     cost: this.cost
                 }

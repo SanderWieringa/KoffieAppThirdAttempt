@@ -54,14 +54,25 @@ export default {
       },
       methods: {
         createKoffieItem(newKoffieItem) {
-            response => console.log(response)
-            newKoffieItem => console.log(newKoffieItem)
-        let TestForURL={Id:newKoffieItem.id,Name:newKoffieItem.name,Cost:newKoffieItem.cost};
-        const url = 'http://localhost:3337/koffieItems';
-        axios.post(url, TestForURL, {headers:{'Content-Type': 'application/json'}})
+        fetch(`http://localhost:3337/koffieItems/` + {
+            method: 'POST',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                '_id': newKoffieItem.id,
+                '_name': newKoffieItem.name,
+                '_cost': newKoffieItem.cost
+            })
+        })
+        .then(
+            response => response.json(),
+            error => console.log(error)
+        )
       }
     }
-      
 }
 </script>
 
