@@ -54,23 +54,14 @@ export default {
       },
       methods: {
         createKoffieItem(newKoffieItem) {
-        fetch(`http://localhost:3337/koffieItems/` + {
-            method: 'POST',
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                '_id': newKoffieItem.id,
-                '_name': newKoffieItem.name,
-                '_cost': newKoffieItem.cost
-            })
-        })
-        .then(
-            response => response.json(),
-            error => console.log(error)
-        )
+        if(newKoffieItem.Name != ""){
+            let TestForURL={Id:0,Name:newKoffieItem.Name,Cost:newKoffieItem.Cost};
+            const url = 'http://localhost:3337/koffieItems';
+            axios.post(url, TestForURL, {headers:{'Content-Type': 'application/json'}});
+        }
+        else{
+            alert("missing name!");
+        }
       }
     }
 }
