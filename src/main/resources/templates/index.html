@@ -145,7 +145,6 @@
 -->
 
 <script>
-    import axios from "axios";
     const apiURL = "http://localhost:3337/koffieItems";
     new Vue({
         el: '#app',
@@ -165,8 +164,16 @@
                 .then(response => console.log(response))
         },
         createKoffieItem(newKoffieItem) {
-            const url = '/localhost/koffieItems';
-            axios.post(url, )
+            var value = newKoffieItem && newKoffieItem.trim()
+            if(!value) {
+                return
+            }
+
+            koffieItems.push({
+                id: value.id,
+                name: value.name,
+                cost: value.cost
+            });
         }
     });
 </script>
