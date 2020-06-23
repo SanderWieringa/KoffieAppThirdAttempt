@@ -33,7 +33,7 @@ public class KoffieAppApplication {
             repository.save(new KoffieApparaatItem(1, "Cappuccino", 0.60, sugar, milk));
             repository.save(new KoffieApparaatItem(2, "Black coffee", 0.50, sugar, milk));
             repository.save(new KoffieApparaatItem(3, "Latte", 0.60, sugar, milk));
-            repository.save(new KoffieApparaatItem(4, "aids", 0.60, sugar, milk));
+            repository.save(new KoffieApparaatItem(4, "koffie", 0.60, sugar, milk));
 
             // fetch all customers
             log.info("KoffieApparaatItems found with findAll():");
