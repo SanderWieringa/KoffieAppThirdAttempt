@@ -1,6 +1,7 @@
 package Rest.Services;
 
 import Rest.Entities.KoffieApparaatItem;
+import Rest.Repositories.KoffieApparaatItemJpaRepository;
 import Rest.Repositories.KoffieApparaatItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,13 @@ public class KoffieApparaatService {
 
     @Autowired
     private KoffieApparaatItemRepository koffieApparaatItemRepository;
+
+    @Autowired
+    private KoffieApparaatItemJpaRepository koffieApparaatItemJpaRepository;
+
+    public KoffieApparaatItem getKoffieApparaatItemByName(String name) {
+        return koffieApparaatItemJpaRepository.findByName(name);
+    }
 
     public List<KoffieApparaatItem> getAllKoffieApparaatItems() {
         List<KoffieApparaatItem> koffieApparaatItems = new ArrayList<>();
