@@ -9,55 +9,55 @@ import java.util.List;
 public class KoffieApparaatItem {
 
     @Id
-    private int _id;
-    private String _name;
-    private double _cost;
+    private int id;
+    private String name;
+    private double cost;
     @OneToMany
-    private List<Sugar> _sugar;
+    private List<Sugar> sugar;
     @OneToMany
-    private List<Milk> _milk;
+    private List<Milk> milk;
 
     public KoffieApparaatItem(int id, String name, double cost, List<Sugar> sugar, List<Milk> milk) {
-        _id = id;
-        _name = name;
-        _cost = cost;
-        _sugar = sugar;
-        _milk = milk;
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.sugar = sugar;
+        this.milk = milk;
     }
 
-    protected KoffieApparaatItem() {
+    public KoffieApparaatItem() {
 
     }
 
     @Override
     public String toString() {
-        return String.format("Rest.KoffieApparaatItem[id=%d, name='%s', cost='%s']", _id, _name, _cost);
+        return String.format("Rest.KoffieApparaatItem[id=%d, name='%s', cost='%s']", id, name, cost);
     }
 
     public int getId(){
-        return _id;
+        return id;
     }
     public void setId(int id){
-        _id = id;
+        this.id = id;
     }
 
     public String getName(){
-        return _name;
+        return name;
     }
     public void setName(String name){
-        _name = name;
+        this.name = name;
     }
 
-    public void set_cost(double cost){
-        _cost = cost;
+    public void setCost(double cost){
+        this.cost = cost;
     }
-    public double get_cost(){
-        return _cost;
+    public double getCost(){
+        return cost;
     }
 
-    public List<Sugar> get_sugar() { return _sugar; }
-    public void set_sugar(List<Sugar> sugar) { _sugar = sugar; }
+    public List<Sugar> getSugar() { return sugar; }
+    public void setSugar(List<Sugar> sugar) { this.sugar = sugar; }
 
-    public List<Milk> get_milk() { return _milk; }
-    public void set_milk(List<Milk> milk) { _milk = milk; }
+    public List<Milk> getMilk() { return milk; }
+    public void setMilk(List<Milk> milk) { this.milk = milk; }
 }
