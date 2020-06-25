@@ -17,6 +17,7 @@ public class KoffieApparaatController {
     @Autowired
     private KoffieApparaatService koffieApparaatService;
 
+    @CrossOrigin
     @RequestMapping(value = "/hello")
     public ResponseEntity<String> sayHi(){
         try {
@@ -27,6 +28,7 @@ public class KoffieApparaatController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/koffieItems")
     public ResponseEntity<List<KoffieApparaatItem>> getAllItems() {
         try {
@@ -37,6 +39,7 @@ public class KoffieApparaatController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/koffieItems/{id}")
     public ResponseEntity<KoffieApparaatItem> getKoffieApparaatItem(@PathVariable int id) {
         try {
@@ -47,6 +50,7 @@ public class KoffieApparaatController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST, value = "/koffieItems")
     public ResponseEntity addKoffieApparaatItem(@RequestBody KoffieApparaatItem koffieApparaatItem) {
         try {
@@ -59,6 +63,7 @@ public class KoffieApparaatController {
 
     }
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.PUT, value = "/koffieItems/{id}")
     public ResponseEntity updateKoffieApparaatItem(@RequestBody KoffieApparaatItem koffieApparaatItem) {
         try {
@@ -70,6 +75,7 @@ public class KoffieApparaatController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.DELETE, value = "/koffieItems/{id}")
     public ResponseEntity deleteKoffieApparaatItem(@PathVariable int id) {
         try {
