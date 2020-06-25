@@ -42,7 +42,7 @@ public class KoffieApparaatControllerTest {
     @Test
     void getKoffieItemByName() throws Exception {
         KoffieApparaatItem expected = new KoffieApparaatItem();
-        expected.setName("Cappuccino");
+        expected.setName("TestCoffee");
         expected.setCost(1.1);
         expected.setSugar(sugarList);
         expected.setMilk(milkList);
