@@ -51,7 +51,7 @@ public class KoffieApparaatControllerTest {
         item1.setMilk(milkList);
 
         KoffieApparaatItem item2 = new KoffieApparaatItem();
-        item2.setName("Cappuccino");
+        item2.setName("Clappuccino");
         item2.setCost(0.7);
         item2.setSugar(sugarList);
         item2.setMilk(milkList);
