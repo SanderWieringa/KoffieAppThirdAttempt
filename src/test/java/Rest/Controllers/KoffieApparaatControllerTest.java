@@ -4,6 +4,7 @@ import Rest.Entities.KoffieApparaatItem;
 import Rest.Entities.Milk;
 import Rest.Entities.Sugar;
 import Rest.Repositories.KoffieApparaatItemJpaRepository;
+import Rest.Repositories.KoffieApparaatItemRepository;
 import Rest.Services.KoffieApparaatService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -38,6 +39,33 @@ public class KoffieApparaatControllerTest {
     private TestEntityManager entityManager;
     @Autowired
     private KoffieApparaatItemJpaRepository koffieRepository;
+    @Autowired
+    private KoffieApparaatItemRepository koffieCrudRepository;
+
+    @Test
+    void getAllKoffieItem() throws Exception {
+        KoffieApparaatItem item1 = new KoffieApparaatItem();
+        item1.setName("Latte");
+        item1.setCost(1.0);
+        item1.setSugar(sugarList);
+        item1.setMilk(milkList);
+
+        KoffieApparaatItem item2 = new KoffieApparaatItem();
+        item2.setName("Cappuccino");
+        item2.setCost(0.7);
+        item2.setSugar(sugarList);
+        item2.setMilk(milkList);
+
+        //entityManager.persist(item1);
+        //entityManager.persist(item2);
+
+        entityManager.flush();
+
+        List<KoffieApparaatItem> list = (List<KoffieApparaatItem>) koffieCrudRepository.findAll();
+
+        assertNotNull(entityManager);
+        assertEquals(2, list.size());
+    }
 
     @Test
     void getKoffieItemByName() throws Exception {
@@ -48,6 +76,7 @@ public class KoffieApparaatControllerTest {
         expected.setMilk(milkList);
 
         entityManager.persist(expected);
+
         entityManager.flush();
 
         KoffieApparaatItem actual = koffieRepository.findByName(expected.getName());

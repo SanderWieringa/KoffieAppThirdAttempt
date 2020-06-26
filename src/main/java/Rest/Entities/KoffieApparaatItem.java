@@ -1,13 +1,13 @@
 package Rest.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class KoffieApparaatItem {
 
+    @Column(unique=true, nullable=false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
     private int id;
     private String name;
